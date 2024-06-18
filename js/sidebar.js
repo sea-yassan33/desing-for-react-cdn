@@ -1,6 +1,14 @@
 const { useState } = React;
 
 function App() {
+    const styles = {
+        columnFlex: 'flex flex-col',
+        bottunBase: 'py-1.5 px-4 transition-colors border font-medium rounded-lg disabled:opacity-50 mb-4',
+        bottunColorGray: 'bg-gray-50 active:bg-gray-200 border-gray-200 text-gray-900 hover:bg-gray-100',
+        bottunColorGreen: 'bg-green-600 active:bg-green-800 border-green-700 text-white hover:bg-green-700',
+
+    };
+
     const [selectedMenu, setSelectedMenu] = useState('Home');
 
     const renderContent = () => {
@@ -27,10 +35,10 @@ function App() {
     return (
         <div className="flex w-full h-screen">
             <div className="w-1/4 bg-green-200 text-white p-4">
-                <ul>
-                    <li className="mb-4 cursor-pointer" onClick={() => setSelectedMenu('Home')}>Home</li>
-                    <li className="mb-4 cursor-pointer" onClick={() => setSelectedMenu('About')}>About</li>
-                    <li className="mb-4 cursor-pointer" onClick={() => setSelectedMenu('Contact')}>Contact</li>
+                <ul className= {styles.columnFlex}>
+                    <button className={`${styles.bottunBase} ${styles.bottunColorGreen}`} onClick={() => setSelectedMenu('Home')}>Home</button>
+                    <button className={`${styles.bottunBase} ${styles.bottunColorGray}`} onClick={() => setSelectedMenu('About')}>About</button>
+                    <button className={`${styles.bottunBase} ${styles.bottunColorGray} w-1/2`} onClick={() => setSelectedMenu('Contact')}>Contact</button>
                 </ul>
             </div>
             <div className="w-3/4 p-4">
