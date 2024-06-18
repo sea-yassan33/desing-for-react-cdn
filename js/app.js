@@ -9,10 +9,7 @@ const Accordion = ({ title, children }) => {
 
     return (
         <div className="border rounded-lg mb-4">
-            <div
-                className="p-4 bg-gray-200 cursor-pointer"
-                onClick={toggleAccordion}
-            >
+            <div className="p-4 bg-gray-200 cursor-pointer" onClick={toggleAccordion}>
                 {title}
             </div>
             {isOpen && <div className="p-4 bg-white">{children}</div>}
